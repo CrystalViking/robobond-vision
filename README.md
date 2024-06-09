@@ -87,7 +87,9 @@ source ~/.bashrc
 
 >(optional)`pip install picamera`
 
+10. Install scipy
 
+>`pip3 install scipy=1.13.1`
 
 ##### Run inference tests
 
