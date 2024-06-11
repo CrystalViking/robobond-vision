@@ -112,7 +112,7 @@ def filter_overlapping_boxes(boxes, class_indices, iou_threshold=0.9):
     return filtered_boxes, filtered_class_indices
 
 # Load the ONNX model
-model_path = 'yolov10t_b16_e300_s320_opset17_quint8_dynamic.onnx'
+model_path = 'train11_y10n_tde_yolo_orig_e200_b16_s320_opset17_quint8_dynamic.onnx'
 
 print("Loading model 1")
 session = ort.InferenceSession(model_path)
@@ -155,7 +155,7 @@ print(f"First model inference time: {inference_time:.4f} seconds")
 # Extract the single output from the model
 output = outputs[0]
 
-class_names_first_model = ["blue", "green", "purple", "red", "robot_v1", "tower_positive"]
+class_names_first_model = ["tower_positive"]
 
 # Post-process the output
 boxes, scores, class_indices = postprocess_output(output)
@@ -170,7 +170,7 @@ else:
     print("No detections above the threshold.")
 
 # Load the second ONNX model
-second_model_path = 'yolov10t_td_b16_e100_s160_opset17_quint8_dynamic.onnx'
+second_model_path = 'train11_xxs_e200_b16_s160_opset17_quint8_dynamic.onnx'
 print("Loading model 2")
 second_session = ort.InferenceSession(second_model_path)
 print("Model 2 loaded")
