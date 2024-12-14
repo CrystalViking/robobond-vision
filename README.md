@@ -100,7 +100,29 @@ or\
 
 
 
+##### Prep for Bookworm OS version
 
+1. Set swapfile same as before
+
+2. update and upgrade 
+
+`sudo apt-get update`
+`sudo apt-get upgrade`
+
+`sudo apt-get install python3-pip`
+
+
+3. create venv
+
+4. pip install opencv-python-headless
+
+5. pip install onnxruntime
+
+6. pip install pillow 
+
+7. sudo apt install -y python3-picamera2
+
+8. 
 
 
 
